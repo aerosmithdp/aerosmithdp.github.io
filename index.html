@@ -1,37 +1,144 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Burning Man</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"> 
+	<link rel="stylesheet" href="css/index.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+	<header id="header" class="header">
+		<div class="container">
+			<div class="nav">
+				<img src="img/logo.svg" alt="Burning Man" class="logo">
+				<ul class="menu">
+					<li>
+						<a href="index.html">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="about.html">
+							About
+						</a>
+					</li>
+					<li>
+						<a href="https://tickets.burningman.org/">
+							Tickets
+						</a>
+					</li>
+					<li>
+						<a href="https://burningman.org/about/about-us/contact/">
+							Contacts
+						</a>
+					</li>
+				</ul>
+				<button class="menu-open">
+					<img src="img/menu.svg" alt="Open menu">
+				</button>
+			</div>
+			<div class="offer">
+				<p class="animate__animated animate__fadeInLeft">Not tne event. The life</p>
+				<h1 class="animate__animated animate__fadeInRight">Burning MAN</h1>
+				<a href="https://tickets.burningman.org/" class="btn">Book the tickets</a>
+			</div>
+		</div>
+	</header>
+	<section id="about" class="about">
+		<div class="container">
+			<h2">About the event</h2>
+			<div class="description">
+				<div class="desc-left">
+					<h3>Rebuilding the society</h3>
+					<p>
+						Burning Man is a network of people inspired by the values reflected in the Ten Principles and united in the pursuit of a more creative and connected existence in the world. 
+						Throughout the year we work to build Black Rock City, home of the largest annual Burning Man gathering, and nurture the distinctive culture emerging from that experience. 
+					</p>
+				</div>
+				<div class="desc-right">
+					<h3>This drives us</h3>
+					<p>
+						Burning Man Project will bring experiences to people in grand, awe-inspiring and joyful ways that lift the human spirit, address social problems, and inspire a sense of culture, community, and civic engagement. 
+						Burning Man provides infrastructural tools and frameworks to support local communities in applying the Ten Principles through six interconnected program areas, including Arts, Civic Involvement, Culture, Education, Philosophical Center, and Social Enterprise.
+					</p>
+				</div>			
+			</div>
+			<div class="gallery">
+				<img src="img/img1.jpg" alt="Event photo 1">
+				<img src="img/img2.jpg" alt="Event photo 2">
+				<img src="img/img3.jpg" alt="Event photo 3">
+			</div>
+		</div>
+	</section>
+	<footer id="footer" class="footer">
+	
+	<div class="timer">
+		<div class="timer__items">
+		  <div class="timer__item timer__days">00</div>
+		  <div class="timer__item timer__hours">00</div>
+		  <div class="timer__item timer__minutes">00</div>
+		  <div class="timer__item timer__seconds">00</div>
+		</div>
+	  </div>
 
-You can use the [editor on GitHub](https://github.com/aerosmithdp/aerosmithdp.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+		<div class="container">
+			<div class="footer-text">
+				<p>
+					<script>
+						var chr = -1;
+						var txt = '© 1989-2022 Burning Man Project<br>A Global Arts & Culture Nonprofit'
+						var l = txt.length
+						var p = "_"
+						function changetext()
+						{
+						chr++;
+						t = document.all["text"].innerHTML
+						tt = t.substring(0,t.length-p.length)
+						if(txt.charAt(chr)!="<")
+						{
+						document.all["text"].innerHTML= tt + txt.charAt(chr) + p
+						}
+						else {
+						document.all["text"].innerHTML= tt + txt.substring(chr, chr+4) + p
+						chr=chr+3
+						}
+						setTimeout("changetext()", 90)
+						}
+						function str(num) {
+						var s = ""
+						for(i=0; i<num; i++)
+						{ s = s + " " }
+						return s }
+					</script>
+						
+						<body onload="changetext()">
+						<font id="text"></font>
+				</p>
+			</div>
+		</div>
+	</footer>
+	
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+	<!-- Этот код находит внешнюю ссылку и добавляет в найденный элемент аттрибут target="_blank"
+	Каждая внешняя ссылка будет открыта в новом окне -->
+	<script>
+		$('a').each(function() {
+		var a = new RegExp('/' + window.location.host + '/');
+		if(!a.test(this.href)) {
+		$(this).click(function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		window.open(this.href, '_blank');
+		});
+		}
+		});
+	</script>
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/aerosmithdp/aerosmithdp.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Burning Man</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"> 
+	<link rel="stylesheet" href="css/about.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+	<!-- Создание слайдшоу в виде плавной смены изображений -->
+	<script>
+		var total_pics_num = 4; // колличество изображений
+		var interval = 3000; // задержка между изображениями
+		var time_out = 1; // задержка смены изображений
+		var i = 0;
+		var timeout;
+		var opacity = 100; // прозрачность
+		function fade_to_next() {
+		opacity--;
+		var k = i + 1;
+		var image_now = 'image_' + i;
+		if (i == total_pics_num) k = 1;
+		var image_next = 'image_' + k;
+		document.getElementById(image_now).style.opacity = opacity/100;
+		document.getElementById(image_now).style.filter = 'alpha(opacity='+ opacity +')';
+		document.getElementById(image_next).style.opacity = (100-opacity)/100;
+		document.getElementById(image_next).style.filter = 'alpha(opacity='+ (100-opacity) +')';
+		timeout = setTimeout("fade_to_next()",time_out);
+		if (opacity==1) {
+		opacity = 100;
+		clearTimeout(timeout);
+		}
+		}
+		setInterval (
+		function() {
+		i++;
+		if (i > total_pics_num) i=1;
+		fade_to_next();
+		}, interval
+		);
+	</script>
+
+<!-- /* Создание класса для изображений с фиксированной позицией и размерами */ -->
+<style>
+.img-slide {
+	position: absolute; width:1140px; height:460px;
+	}
+</style>
+
+</head>
+<body>
+	<header id="header" class="header">
+		<div class="container">
+			<div class="nav">
+				<img src="img/logo.svg" alt="Burning Man" class="logo">
+				<ul class="menu">
+					<li>
+						<a href="index.html">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="about.html">
+							About
+						</a>
+					</li>
+					<li>
+						<a href="https://tickets.burningman.org/">
+							Tickets
+						</a>
+					</li>
+					<li>
+						<a href="https://burningman.org/about/about-us/contact/">
+							Contacts
+						</a>
+					</li>
+				</ul>
+				<button class="menu-open">
+					<img src="img/menu.svg" alt="Open menu">
+				</button>
+			</div>
+        </div>
+    </header>
+        <section id="about" class="about">
+            <div class="container">
+                <h2  class="animate__animated animate__fadeInDown">About Us</h2>
+                <div class="description">
+                    <div class="desc-left">
+                        <p>
+                            Burning Man is a network of people inspired by the values reflected in the Ten Principles and united in the pursuit of a more creative and connected existence in the world. 
+							Throughout the year we work to build Black Rock City, home of the largest annual Burning Man gathering, and nurture the distinctive culture emerging from that experience. 
+							The hub of this global network is the 501(c)(3) non-profit Burning Man Project, headquartered in San Francisco, California.
+                        </p>
+                        <br>
+                        <h3 class="animate__animated animate__fadeInLeft">Vision</h3>
+                        <p>
+                        	Burning Man Project will bring experiences to people in grand, awe-inspiring and joyful ways that lift the human spirit, address social problems, and inspire a sense of culture, community, and civic engagement.
+                        </p>
+						<br>
+                        <h3 class="animate__animated animate__fadeInLeft">Program Areas</h3>
+                        <p>
+                            Burning Man provides infrastructural tools and frameworks to support local communities in applying the Ten Principles through six interconnected program areas, including Arts, Civic Involvement, Culture, Education, Philosophical Center, and Social Enterprise.
+							These program areas were developed in 2011 by the six founders of Burning Man and their nonprofit and legal advisors, who were crafting the long-term vision for the new nonprofit which became the Burning Man Project. 
+							These are not distinct, independently operating programs. They are aspirational, and represent what we have been doing and what we intend to do. 
+							Each year we focus on certain areas more than others, but this paints the big picture. 
+							We want you to know we`re thinking big about Burning Man`s potential influence on the world (we often talk about Burning Man`s 100-year plan), and we invite you to think big, too.
+                        </p>
+                    </div>
+                    <div class="desc-right">
+                        <h3 class="animate__animated animate__fadeInRight">Mission Statement</h3>
+                        <p>
+                            The mission of Burning Man Project is to facilitate and extend the culture that has issued from the Burning Man event into the larger world.
+                        </p>
+                        <br>
+						<br>
+                        <h3 class="animate__animated animate__fadeInRight">Our Mission</h3>
+                        <p>
+                            Burning Man Project`s mission is to produce the annual event known as Burning Man and to guide, nurture and protect the more permanent community created by its culture. 
+							Our intention is to generate society that connects each individual to his or her creative powers, to participation in community, to the larger realm of civic life, and to the even greater world of nature that exists beyond society.
+                            We believe that the experience of Burning Man can produce positive spiritual change in the world. 
+							To this end, it is equally important that we communicate with one another, with the citizens of Black Rock City and with the community of Burning Man wherever it may arise. 
+							Burning Man is radically inclusive, and its meaning is potentially accessible to anyone.
+                            The touchstone of value in our culture will always be immediacy: experience before theory, moral relationships before politics, survival before services, roles before jobs, embodied support before sponsorship. 
+							Finally, in order to accomplish these ends, Burning Man must endure as a self-supporting enterprise that is capable of sustaining the lives of those who dedicate themselves to its work. 
+							From this devotion spring those duties that we owe to one another.
+                            We will always burn the Man.
+                        </p>
+                    </div>			
+                </div>
+
+				<br>
+				<br>
+				<div style="min-height:200px;">
+					<img src='/img/img4.jpg' id="image_1" class="img-slide" />
+					<img src='/img/img5.jpg' id="image_2" style="opacity: 0; filter: alpha(opacity=0);" class="img-slide" alt="" />
+					<img src='/img/img6.jpg' id="image_3" style="opacity: 0; filter: alpha(opacity=0);" class="img-slide" alt="" />
+					<img src='/img/img7.jpg' id="image_4" style="opacity: 0; filter: alpha(opacity=0);" class="img-slide" alt="" />
+					<img src='/img/img8.jpg' id="image_4" style="opacity: 0; filter: alpha(opacity=0);" class="img-slide" alt="" />
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
+	<footer id="footer" class="footer">
+		<div class="container">
+			<div class="footer-text">
+				<p>	
+					<script>
+						var chr = -1;
+						var txt = '© 1989-2022 Burning Man Project<br>A Global Arts & Culture Nonprofit'
+						var l = txt.length
+						var p = "_"
+						function changetext()
+						{
+						chr++;
+						t = document.all["text"].innerHTML
+						tt = t.substring(0,t.length-p.length)
+						if(txt.charAt(chr)!="<")
+						{
+						document.all["text"].innerHTML= tt + txt.charAt(chr) + p
+						}
+						else {
+						document.all["text"].innerHTML= tt + txt.substring(chr, chr+4) + p
+						chr=chr+3
+						}
+						setTimeout("changetext()", 90)
+						}
+						function str(num) {
+						var s = ""
+						for(i=0; i<num; i++)
+						{ s = s + " " }
+						return s }
+						</script>
+						
+						<body onload="changetext()">
+						<font id="text"></font>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Этот код находит внешнюю ссылку и добавляет в найденный элемент аттрибут target="_blank"
+		 Каждая внешняя ссылка будет открыта в новом окне -->
+
+	<script>
+		$('a').each(function() {
+		var a = new RegExp('/' + window.location.host + '/');
+		if(!a.test(this.href)) {
+		$(this).click(function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		window.open(this.href, '_blank');
+		});
+		}
+		});
+	</script>
+
+</body>                
